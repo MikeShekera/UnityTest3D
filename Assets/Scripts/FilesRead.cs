@@ -15,7 +15,7 @@ public class FilesRead : MonoBehaviour
         List<string> list2 = File.ReadAllLines(readFromFilePath2).ToList();
         List<string> mergedList = new List<string>();
         mergedList = list1.Union<string>(list2).ToList<string>();
-        List<int> sortedList = mergedList.Select(int.Parse).ToList();
+        List<double> sortedList = mergedList.Select(double.Parse).ToList();
         sortedList.Sort();
 
 
