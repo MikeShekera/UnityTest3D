@@ -14,11 +14,22 @@ public class ScreenOutput : MonoBehaviour
 
     private List<double> _sortedList;
 
+    private const string divider = "---------------";
+    private const float delayTime = 0.3f;
+
     public void LoadOnScreen()
     {
         _sortedList = FilesRead.sortedList;
 
-        InvokeRepeating("Write", 0, 0.3f);
+        if (_sortedList.Count == 0)
+        {
+            textObject.GetComponent<Text>().text = "Выводить нечего";
+            Instantiate(textObject, contentWindow);
+        }
+        else
+        {
+            InvokeRepeating(nameof(Write), 0, delayTime);
+        }
     }
 
     private void Write()
@@ -29,7 +40,7 @@ public class ScreenOutput : MonoBehaviour
 
         if(position == _sortedList.Count)
         {
-            textObject.GetComponent<Text>().text = "-----------------";
+            textObject.GetComponent<Text>().text = divider;
             Instantiate(textObject, contentWindow);
 
             CancelInvoke();

@@ -23,14 +23,13 @@ public class FilesRead : MonoBehaviour
         try
         {
             sortedList = mergedList.Select(double.Parse).ToList();
-            sortedList.Sort();
             Debug.Log("Конвертация успешна");
         }
         catch
         {
             Debug.Log("ОШИБКА! В исходных файлах содержатся не только числа \n Измените содержание текстовых файлов");
-            button.SetActive(false);
             Application.Quit();
         }
+        sortedList.Sort();
     }
 }
