@@ -16,22 +16,20 @@ public class ScreenOutput : MonoBehaviour
     public void LoadOnScreen()
     {
         _sortedList = FilesRead.sortedList;
-        foreach (var x in _sortedList)
-        {
-            Debug.Log(x.ToString());
-        }
-        //InvokeRepeating("Write", 0, 0.3f);
+
+        InvokeRepeating("Write", 0, 0.3f);
     }
 
     private void Write()
     {
-        Instantiate(textObject, contentWindow);
         textObject.GetComponent<Text>().text = _sortedList[position].ToString();
+        Instantiate(textObject, contentWindow);
         position++;
         if(position == _sortedList.Count)
         {
             CancelInvoke();
             position = 0;
+            textObject.GetComponent<Text>().text = "";
         }
     }
 }

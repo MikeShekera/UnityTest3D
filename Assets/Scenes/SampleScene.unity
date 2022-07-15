@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentWindow: {fileID: 254417636}
-  textObject: {fileID: 8759106926940308932, guid: e9d94d7f8ba05f04e893da80a6870964, type: 3}
+  textObject: {fileID: 2246595020995176910, guid: 8aa980225f33d624c87ecb52b90e9ab9, type: 3}
 --- !u!1 &1706207878
 GameObject:
   m_ObjectHideFlags: 0
