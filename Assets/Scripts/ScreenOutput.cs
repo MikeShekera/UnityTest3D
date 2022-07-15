@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScreenOutput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Transform contentWindow;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject textObject;
+    public void LoadOnScreen()
     {
-        
+        List<double> _sortedList = FilesRead.sortedList;
+
+        foreach (var x in _sortedList)
+        {
+            Instantiate(textObject, contentWindow);
+            textObject.GetComponent<Text>().text = x.ToString();
+        }
     }
 }

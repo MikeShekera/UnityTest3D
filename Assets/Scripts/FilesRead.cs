@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class FilesRead : MonoBehaviour
 {
+    public static List<double> sortedList = new List<double>();
+    public static List<string> mergedList = new List<string>();
     public void Start()
     {
         string readFromFilePath = Application.dataPath + "/Resources/" + "data1" + ".txt";
@@ -13,11 +15,11 @@ public class FilesRead : MonoBehaviour
 
         List<string> list1 = File.ReadAllLines(readFromFilePath).ToList();
         List<string> list2 = File.ReadAllLines(readFromFilePath2).ToList();
-        List<string> mergedList = new List<string>();
+        //List<string> mergedList = new List<string>();
+        mergedList = new List<string>();
         mergedList = list1.Union<string>(list2).ToList<string>();
-        List<double> sortedList = mergedList.Select(double.Parse).ToList();
+        sortedList = mergedList.Select(double.Parse).ToList();
         sortedList.Sort();
-
 
         foreach (var x in sortedList)
         {
