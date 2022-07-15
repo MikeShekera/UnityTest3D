@@ -13,6 +13,7 @@ public class ScreenOutput : MonoBehaviour
     private int position = 0;
 
     private List<double> _sortedList;
+
     public void LoadOnScreen()
     {
         _sortedList = FilesRead.sortedList;
@@ -25,9 +26,14 @@ public class ScreenOutput : MonoBehaviour
         textObject.GetComponent<Text>().text = _sortedList[position].ToString();
         Instantiate(textObject, contentWindow);
         position++;
+
         if(position == _sortedList.Count)
         {
+            textObject.GetComponent<Text>().text = "-----------------";
+            Instantiate(textObject, contentWindow);
+
             CancelInvoke();
+
             position = 0;
             textObject.GetComponent<Text>().text = "";
         }

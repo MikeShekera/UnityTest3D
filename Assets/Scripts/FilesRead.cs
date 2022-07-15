@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class FilesRead : MonoBehaviour
 {
+    public GameObject button;
+
     public static List<double> sortedList = new List<double>();
     public void Start()
     {
@@ -14,15 +16,21 @@ public class FilesRead : MonoBehaviour
 
         List<string> list1 = File.ReadAllLines(readFromFilePath).ToList();
         List<string> list2 = File.ReadAllLines(readFromFilePath2).ToList();
+
         List<string> mergedList = new List<string>();
         mergedList = list1.Union<string>(list2).ToList<string>();
-        sortedList = mergedList.Select(double.Parse).ToList();
-        sortedList.Sort();
 
-        //foreach (var x in sortedList)
-        //{
-        //    Debug.Log(x.ToString());
-        //}
-        Debug.Log(sortedList[0].ToString());
+        try
+        {
+            sortedList = mergedList.Select(double.Parse).ToList();
+            sortedList.Sort();
+            Debug.Log("Конвертация успешна");
+        }
+        catch
+        {
+            Debug.Log("ОШИБКА! В исходных файлах содержатся не только числа \n Измените содержание текстовых файлов");
+            button.SetActive(false);
+            Application.Quit();
+        }
     }
 }
