@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Test Runner
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 78
+  controlID: 125
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 35
+  controlID: 124
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -119,8 +119,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 609
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -145,8 +145,8 @@ MonoBehaviour:
     y: 0
     width: 363
     height: 561
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -171,14 +171,14 @@ MonoBehaviour:
     y: 561
     width: 1466
     height: 386
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 15}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 15}
   - {fileID: 20}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 36
+  controlID: 21
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 25
+  controlID: 22
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -357,14 +357,14 @@ MonoBehaviour:
     m_SaveData: []
   m_Spl:
     ID: 130
-    splitterInitialOffset: 0
+    splitterInitialOffset: 194
     currentActiveSplitter: -1
     realSizes:
-    - 185
-    - 62
+    - 126
+    - 121
     relativeSizes:
-    - 0.75
-    - 0.25
+    - 0.51012146
+    - 0.48987854
     minSizes:
     - 32
     - 32
@@ -423,7 +423,7 @@ MonoBehaviour:
       name: TestProject
       fullName: TestProject
       resultStatus: 1
-      duration: 0.0559601
+      duration: 0.0601526
       messages: 
       output: 
       stacktrace: 
@@ -439,7 +439,7 @@ MonoBehaviour:
       name: EditMode.dll
       fullName: E:/Unity/3DTest/TestProject/Library/ScriptAssemblies/EditMode.dll
       resultStatus: 1
-      duration: 0.0307235
+      duration: 0.0302941
       messages: 
       output: 
       stacktrace: 
@@ -455,7 +455,7 @@ MonoBehaviour:
       name: InputDataTest
       fullName: InputDataTest
       resultStatus: 1
-      duration: 0.0291002
+      duration: 0.0286321
       messages: 
       output: 
       stacktrace: 
@@ -466,14 +466,18 @@ MonoBehaviour:
       categories: []
       parentId: 1003
       parentUniqueId: '[EditMode][E:/Unity/3DTest/TestProject/Library/ScriptAssemblies/EditMode.dll][suite]'
-    - id: 1003
+    - id: 1002
       uniqueId: EditMode.dll/InputDataTest/[EditMode][InputDataTest.MergeTest]
       name: MergeTest
       fullName: InputDataTest.MergeTest
       resultStatus: 1
-      duration: 0.0135107
+      duration: 0.0137582
       messages: 
-      output: 
+      output: "You are trying to create a MonoBehaviour using the 'new' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all\r\n\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0430\u0446\u0438\u044F
+        \u0443\u0441\u043F\u0435\u0448\u043D\u0430\r\n"
       stacktrace: 
       notRunnable: 0
       ignoredOrSkipped: 0
@@ -483,7 +487,11 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditMode.dll/[EditMode][InputDataTest][suite]
-    m_ResultText: MergeTest (0,014s)
+    m_ResultText: "MergeTest (0,014s)\n---\nYou are trying to create a MonoBehaviour
+      using the 'new' keyword.  This is not allowed.  MonoBehaviours can only be
+      added using AddComponent(). Alternatively, your script can inherit from ScriptableObject
+      or no base class at all\r\n\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0430\u0446\u0438\u044F
+      \u0443\u0441\u043F\u0435\u0448\u043D\u0430"
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
@@ -569,9 +577,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 165b0000
-    m_LastClickedID: 23318
-    m_ExpandedIDs: 000000000e5b000000ca9a3b
+    m_SelectedIDs: 185b0000
+    m_LastClickedID: 23320
+    m_ExpandedIDs: 00000000125b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -599,7 +607,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000e5b0000
+    m_ExpandedIDs: 00000000125b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -624,8 +632,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: ce5a0000
+    m_LastClickedInstanceID: 23246
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -727,9 +735,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: cc5a0000
+      m_SelectedIDs: ce5a0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 0cfbffff
+      m_ExpandedIDs: 4084ffffa886ffff1688ffff868affff3aa6ffff12aaffff74abffffeaabffffc8b6ffffecb6ffff08fbfffff6590000625a00007c5a0000905a000016720000b0720000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

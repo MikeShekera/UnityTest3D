@@ -18,7 +18,7 @@ public class ScreenOutput : MonoBehaviour
 
     public void LoadOnScreen()
     {
-        FilesRead files = gameObject.AddComponent<FilesRead>();
+        FilesRead files = gameObject.GetComponent<FilesRead>();
         files.FilesProcessing();
         _sortedList = files.sortedList;
 
