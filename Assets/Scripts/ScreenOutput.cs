@@ -19,7 +19,9 @@ public class ScreenOutput : MonoBehaviour
 
     public void LoadOnScreen()
     {
-        _sortedList = FilesRead.sortedList;
+        FilesRead files = new FilesRead();
+        files.Start();
+        _sortedList = files.sortedList;
 
         if (_sortedList.Count == 0)
         {

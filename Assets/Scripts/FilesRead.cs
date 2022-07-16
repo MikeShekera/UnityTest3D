@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +9,7 @@ public class FilesRead : MonoBehaviour
 {
     public GameObject button;
 
-    public static List<double> sortedList = new List<double>();
+    public List<double> sortedList = new List<double>();
     public void Start()
     {
         string readFromFilePath = Application.dataPath + "/Resources/" + "data1" + ".txt";
@@ -25,7 +26,7 @@ public class FilesRead : MonoBehaviour
             sortedList = mergedList.Select(double.Parse).ToList();
             Debug.Log("Конвертация успешна");
         }
-        catch
+        catch (FormatException)
         {
             Debug.Log("ОШИБКА! В исходных файлах содержатся не только числа \n Измените содержание текстовых файлов");
             Application.Quit();
