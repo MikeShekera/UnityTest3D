@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +18,8 @@ public class ScreenOutput : MonoBehaviour
 
     public void LoadOnScreen()
     {
-        FilesRead files = new FilesRead();
-        files.Start();
+        FilesRead files = gameObject.AddComponent<FilesRead>();
+        files.FilesProcessing();
         _sortedList = files.sortedList;
 
         if (_sortedList.Count == 0)

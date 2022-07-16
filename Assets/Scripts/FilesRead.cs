@@ -10,13 +10,13 @@ public class FilesRead : MonoBehaviour
     public GameObject button;
 
     public List<double> sortedList = new List<double>();
-    private IEnumerable<string> list1;
-    private IEnumerable<string> list2;
-    private IEnumerable<string> mergedList;
+    public IEnumerable<string> list1;
+    public IEnumerable<string> list2;
+    public IEnumerable<string> mergedList;
+    private string readFromFilePath;
+    private string readFromFilePath2;
 
-    private static string readFromFilePath;
-    private static string readFromFilePath2;
-    public void Start()
+    public void FilesProcessing()
     {
         readFromFilePath = Application.dataPath + "/Resources/" + "data1" + ".txt";
         readFromFilePath2 = Application.dataPath + "/Resources/" + "data2" + ".txt";
