@@ -10,16 +10,21 @@ public class FilesRead : MonoBehaviour
     public GameObject button;
 
     public List<double> sortedList = new List<double>();
+    private IEnumerable<string> list1;
+    private IEnumerable<string> list2;
+    private IEnumerable<string> mergedList;
+
+    private static string readFromFilePath;
+    private static string readFromFilePath2;
     public void Start()
     {
-        string readFromFilePath = Application.dataPath + "/Resources/" + "data1" + ".txt";
-        string readFromFilePath2 = Application.dataPath + "/Resources/" + "data2" + ".txt";
+        readFromFilePath = Application.dataPath + "/Resources/" + "data1" + ".txt";
+        readFromFilePath2 = Application.dataPath + "/Resources/" + "data2" + ".txt";
 
-        List<string> list1 = File.ReadAllLines(readFromFilePath).ToList();
-        List<string> list2 = File.ReadAllLines(readFromFilePath2).ToList();
+        list1 = File.ReadAllLines(readFromFilePath);
+        list2 = File.ReadAllLines(readFromFilePath2);
 
-        List<string> mergedList = new List<string>();
-        mergedList = list1.Union<string>(list2).ToList<string>();
+        mergedList = list1.Union<string>(list2);
 
         try
         {
